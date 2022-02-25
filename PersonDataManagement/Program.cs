@@ -8,7 +8,7 @@ public class Programe
         AddRecords(listPersonsInCity);
         TopTwo_Records_Age_Lessthan_Sixty(listPersonsInCity);
         Checking_For_TeenAge(listPersonsInCity);
-
+        AverageAge(listPersonsInCity)
     }
     private static void AddRecords(List<Person> listPersonsInCity)
     {
@@ -38,5 +38,10 @@ public class Programe
         }
         else
             Console.WriteLine("No, We Don't have TeenAge In List");
+    }
+    private static void AverageAge(List<Person> listPersonsInCity)
+    {
+        double avegAge = listPersonsInCity.Average(e => e.Age);
+        Console.WriteLine("The Average Age of all the person is :- " + avegAge);
     }
 }
