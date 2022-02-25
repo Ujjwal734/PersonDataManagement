@@ -1,2 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using PersonDataManagement;
+public class Programe
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, Welcome to person data Management...!");
+        List<Person> listPersonsInCity = new List<Person>();
+        AddRecords(listPersonsInCity);
+
+    }
+    private static void AddRecords(List<Person> listPersonsInCity)
+    {
+        listPersonsInCity.Add(new Person("55", "Jhon", "12 main street, Newyork", 18));
+        listPersonsInCity.Add(new Person("56", "Jordan", "12 main street, California", 60));
+        listPersonsInCity.Add(new Person("51", "Mate", "12 main street, America", 55));
+        listPersonsInCity.Add(new Person("50", "Markone", "12 main street, England", 65));
+        listPersonsInCity.Add(new Person("54", "Ashish", "12 main street, India", 15));
+        listPersonsInCity.Add(new Person("52", "Jho", "12 main street, mascow", 25));
+        foreach (var item in listPersonsInCity)
+        {
+            Console.WriteLine(item.SSN + " " + item.Name + " " + item.Address + " " + item.Age);
+        }
+    }
+}
