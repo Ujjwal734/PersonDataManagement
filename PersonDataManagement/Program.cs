@@ -6,6 +6,7 @@ public class Programe
         Console.WriteLine("Hello, Welcome to person data Management...!");
         List<Person> listPersonsInCity = new List<Person>();
         AddRecords(listPersonsInCity);
+        TopTwo_Records_Age_Lessthan_Sixty(listPersonsInCity);
 
     }
     private static void AddRecords(List<Person> listPersonsInCity)
@@ -19,6 +20,13 @@ public class Programe
         foreach (var item in listPersonsInCity)
         {
             Console.WriteLine(item.SSN + " " + item.Name + " " + item.Address + " " + item.Age);
+        }
+    }
+    private static void TopTwo_Records_Age_Lessthan_Sixty(List<Person> listPersonsInCity)
+    {
+        foreach (Person person in listPersonsInCity.FindAll(e => (e.Age < 60)).Take(2).ToList())
+        {
+            Console.WriteLine("Name : " + person.Name + " \t\tAge : " + person.Age);
         }
     }
 }
