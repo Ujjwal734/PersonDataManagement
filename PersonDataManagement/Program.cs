@@ -7,6 +7,7 @@ public class Programe
         List<Person> listPersonsInCity = new List<Person>();
         AddRecords(listPersonsInCity);
         TopTwo_Records_Age_Lessthan_Sixty(listPersonsInCity);
+        Checking_For_TeenAge(listPersonsInCity);
 
     }
     private static void AddRecords(List<Person> listPersonsInCity)
@@ -28,5 +29,14 @@ public class Programe
         {
             Console.WriteLine("Name : " + person.Name + " \t\tAge : " + person.Age);
         }
+    }
+    private static void Checking_For_TeenAge(List<Person> listPersonsInCity)
+    {
+        if (listPersonsInCity.Any(e => (e.Age >= 13 && e.Age <= 19)))
+        {
+            Console.WriteLine("Yes, We have TeenAge In List");
+        }
+        else
+            Console.WriteLine("No, We Don't have TeenAge In List");
     }
 }
