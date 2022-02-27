@@ -6,9 +6,14 @@ public class Programe
         Console.WriteLine("Hello, Welcome to person data Management...!");
         List<Person> listPersonsInCity = new List<Person>();
         AddRecords(listPersonsInCity);
+        Console.WriteLine("                           ");
         TopTwo_Records_Age_Lessthan_Sixty(listPersonsInCity);
+        Console.WriteLine("                           ");
         Checking_For_TeenAge(listPersonsInCity);
-        AverageAge(listPersonsInCity)
+        Console.WriteLine("                           ");
+        AverageAge(listPersonsInCity);
+        Console.WriteLine("                           ");
+        SpecificName(listPersonsInCity);
     }
     private static void AddRecords(List<Person> listPersonsInCity)
     {
@@ -43,5 +48,17 @@ public class Programe
     {
         double avegAge = listPersonsInCity.Average(e => e.Age);
         Console.WriteLine("The Average Age of all the person is :- " + avegAge);
+    }
+    private static void SpecificName(List<Person> list)
+    {
+        Console.WriteLine("\nChecking whether a person having name 'Jhon' exists or not...");
+        if (list.Exists(e => e.Name == "Jhon"))
+        {
+            Console.WriteLine("Yes, A person having name 'Jhon' exists in our list");
+        }
+        else
+        {
+            Console.WriteLine("No,We Don't Have Name in list");
+        }
     }
 }
