@@ -14,6 +14,7 @@ public class Programe
         AverageAge(listPersonsInCity);
         Console.WriteLine("                           ");
         SpecificName(listPersonsInCity);
+        SkipRecord(listPersonsInCity);
     }
     private static void AddRecords(List<Person> listPersonsInCity)
     {
@@ -59,6 +60,14 @@ public class Programe
         else
         {
             Console.WriteLine("No,We Don't Have Name in list");
+        }
+    }
+    private static void SkipRecord(List<Person> list)
+    {
+        Console.WriteLine("\nSkipping every person whose age is less than 60 years...");
+        foreach (Person person in list.Skip(e => e.Age < 60))
+        {
+            Console.WriteLine("Name : " + person.Name + " \t\tAge: " + person.Age);
         }
     }
 }
